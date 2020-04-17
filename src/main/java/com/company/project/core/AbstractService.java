@@ -1,6 +1,5 @@
 package com.company.project.core;
 
-
 import org.apache.ibatis.exceptions.TooManyResultsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import tk.mybatis.mapper.entity.Condition;
@@ -12,10 +11,11 @@ import java.util.List;
 /**
  * 基于通用MyBatis Mapper插件的Service接口的实现
  */
-public abstract class AbstractService<T> implements Service<T> {
+public abstract class AbstractService<T>  implements Service<T> {
 
     @Autowired
     protected Mapper<T> mapper;
+
 
     private Class<T> modelClass;    // 当前泛型真实类型的Class
 
@@ -68,6 +68,7 @@ public abstract class AbstractService<T> implements Service<T> {
     public List<T> findByCondition(Condition condition) {
         return mapper.selectByCondition(condition);
     }
+
 
     public List<T> findAll() {
         return mapper.selectAll();
