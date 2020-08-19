@@ -5,6 +5,7 @@ import com.company.project.core.ResultGenerator;
 import com.company.project.model.Shop;
 import com.company.project.service.ShopService;
 import com.github.pagehelper.PageHelper;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,6 +18,7 @@ import javax.annotation.Resource;
 */
 @RestController
 @RequestMapping("/shop")
+@Slf4j
 public class ShopController {
     @Resource
     private ShopService shopService;
@@ -48,6 +50,7 @@ public class ShopController {
     @PostMapping("/list")
     public Result list(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
         PageHelper.startPage(page, size);
+        log.info("1111:{}","woshi");
         Shop list = shopService.queryShop(1);
         return ResultGenerator.genSuccessResult(list);
     }

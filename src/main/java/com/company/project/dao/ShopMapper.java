@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-public interface ShopMapper<T> extends Mapper<T> {
+public interface ShopMapper  extends Mapper<Shop> {
     long countByExample(ShopExample example);
 
     int deleteByExample(ShopExample example);

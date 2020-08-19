@@ -9,6 +9,6 @@ import org.apache.ibatis.annotations.Param;
  * @Date: 2020/8/18 11:26
  * @Description:
  */
-public interface ShopDao extends ShopMapper<Shop> {
+public interface ShopDao   {
     Shop queryShop(@Param("id") Integer id);
 }

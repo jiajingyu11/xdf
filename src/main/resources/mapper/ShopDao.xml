@@ -16,6 +16,6 @@
   <select id="queryShop" resultMap="BaseResultMap" parameterType="java.lang.Integer">
     select
     *
-    from shop where id = #{id}
+    from t_shop where id = #{id}
   </select>
 </mapper>
